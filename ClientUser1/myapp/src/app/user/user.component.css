@@ -1,0 +1,65 @@
+#userDiv {
+    
+    margin-left: 50px;
+    width: 400px;
+    
+    border: 2px solid;
+    
+}
+
+.other {
+
+    margin-left: 25px;
+    width: 350px;
+    
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: lightgrey;
+    
+
+}
+
+#todos {
+    position: absolute;
+    width: 300px;
+    margin-left: 550px;
+    margin-top: -360px;  
+    
+}
+
+#posts {
+    position: absolute;
+    width: 300px;
+    margin-left: 550px;
+    margin-top: 350px;   
+   
+}
+
+.beauty {
+    width: 250;
+    border: 2px solid black;
+}
+
+ul {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: auto;
+    
+}
+li {
+    
+    align-items: center;
+    
+    list-style-type: none;
+    border: 2px solid purple;
+    margin-bottom: 5px;
+    
+   
+
+}
+
+#hiddenId {
+    visibility: hidden;
+}
+

@@ -1,0 +1,17 @@
+<br/><br><br>
+<div id="post">
+    <form #f="ngForm" (ngSubmit)="update(txtTitle.value, txtBody.value)">
+        New Title: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" #txtTitle ><br><br>
+        
+         <br/>
+         New Body: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" #txtBody><br><br>
+        
+         <br/>
+        
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Cancel" (click)="reload()">
+    
+            
+        &nbsp; <input type="submit" value="Add"><br><br>
+    </form><br><br>
+</div>
+

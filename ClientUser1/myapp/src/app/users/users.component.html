@@ -1,0 +1,19 @@
+<div id="visiable" *ngIf="isVisiable">
+    <form #f="ngForm" (ngSubmit)="create()">
+        <br><br>
+        &nbsp; Name : <input type="text" name="full_name" [(ngModel)]="userData.full_name" ><br/><br>
+        &nbsp; Email : <input type="text" name="email" [(ngModel)]="userData.email" ><br/><br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Cancel" (click)="reload()">
+
+        
+         &nbsp; <input type="submit" value="Add"><br><br>
+    </form> <br/>
+</div> <br><br>
+
+<div class="users"> <br><br>
+    &nbsp; Search: <input type="text" #searchPhrase (keyup)="search(searchPhrase.value)">
+    &nbsp; <input type="button" value= "Add"  (click)="isVisiable =!isVisiable"> <br><br>
+    
+   
+    <app-user  *ngFor="let u of filteredUsers" [user]="u"></app-user>
+</div>

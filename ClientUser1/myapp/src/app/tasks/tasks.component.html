@@ -1,0 +1,14 @@
+<br/>
+<div id="task">
+    <form #f="ngForm" (ngSubmit)="update(txtTitle.value)">
+        New Todo: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" #txtTitle ><br><br>
+        
+         <br/>
+        
+        
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="button" value="Cancel" (click)="reload()">
+    
+            
+        &nbsp; <input type="submit" value="Add"><br><br>
+    </form><br><br>
+</div>

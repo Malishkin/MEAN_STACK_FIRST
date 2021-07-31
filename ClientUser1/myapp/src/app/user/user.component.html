@@ -1,0 +1,79 @@
+<br>
+
+
+    
+
+    <div id="userDiv" [style.backgroundColor]="isClicked? 'orange' : 'white' "
+        [style.borderColor]="tasksCompleted ? 'green' : 'red'">
+        <br><br>
+
+        &nbsp;<label for="userDiv; todos; posts" (click)="isClicked=!isClicked">ID: {{user._id}} </label><br><br>
+
+        &nbsp;Name: <input type="text" name="full_name" [(ngModel)]="user.full_name"><br><br>
+
+        &nbsp;Email: <input type="text" name="email" [(ngModel)]="user.email">
+        <br><br>
+
+        &nbsp; <input type="button" value="Other Data" (mouseover)="isExist=!isExist">
+        &nbsp; &nbsp;&nbsp; <input type="button" value="Update" (click)="update()"> <input type="button" value="Delete"
+            (click)="delete()">
+        <br><br>
+
+        <div class="other" *ngIf="isExist">
+            <br>
+            &nbsp;Street: &nbsp; &nbsp; <input type="text" name="street" [(ngModel)]="user.street"><br><br>
+
+            &nbsp;City: &nbsp; &nbsp; &nbsp; <input type="text" name="city" [(ngModel)]="user.city">
+
+            <br><br>
+
+            &nbsp;Zipcode: <input type="text" name="zipcode" [(ngModel)]="user.zipcode"> <br><br>
+        </div> <br />
+
+        
+
+
+    </div><br><br>
+
+   
+    
+
+    <div id="todos" *ngIf="isClicked"  >
+        
+        <br>
+        
+        &nbsp; User: {{user._id}}  <input type="button" value="Add" (click)="addTodos=!addTodos" ><br><br>
+        <div class="beauty"[style.visibility]="addTodos? 'hidden': 'visible'">
+            <ul>
+                <li *ngFor="let task of user.todos"  > <br/>&nbsp; <input id="hiddenId"  type="text" name="taskId" #tasktxt [(ngModel)]="task._id"> <br/>
+    
+                     <br>&nbsp; Title:  {{task.title}} <br/>
+                    &nbsp; Completed:  {{task.completed}} &nbsp; <input *ngIf = "!task.completed"   type="button" value="Mark completed" (click)=  "markCompleted(tasktxt.value)">   <br> <br></li>
+                
+            </ul> <br>  
+            <app-tasks [style.visibility]="addTodos? 'visible': 'hidden'"    [userTask]="user" ></app-tasks>
+
+        </div>
+        
+    </div> <br><br>
+
+    <div id="posts" *ngIf="isClicked">
+        <br>
+        &nbsp; User: {{user._id}} <input type="button" value="Add" (click)="addPosts=!addPosts" ><br><br>
+        <div class="beauty" [style.visibility]="addPosts? 'hidden': 'visible'">
+            <ul>
+                <li *ngFor="let post of user.posts"  >   <br>&nbsp; Title:  {{post.post_title}} <br>
+                    &nbsp; Body:  {{post.body}} <br> <br></li>
+                
+            </ul> <br>
+            <app-posts [style.visibility]="addPosts? 'visible': 'hidden'" [userPost]="user" ></app-posts>  
+        </div>
+
+        
+
+        
+    </div>
+
+
+    
+   
